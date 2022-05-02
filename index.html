@@ -16,7 +16,7 @@ body {
     text-transform: uppercase;
     letter-spacing: .5em;
     top: 15%;
-    background: linear-gradient(to right, green , teal);
+    background: linear-gradient(to right, green, teal);
 }
 .center {
     margin: auto;
@@ -32,7 +32,7 @@ body {
     margin-left: -350px;
     }
 </style>
-<body>
+<body id="gradient">
     <div class=center>
         <h1 id="country">Welcome</h1>
         <h3>Song:   </h3><h3 id="songlabel"></h3>
@@ -40,20 +40,6 @@ body {
     </div>
 
     <script src="apps.js"></script>
-
-    <script>
-        function reset() {
-            localStorage.setItem("Color1", '');
-            localStorage.setItem("Color2", '');
-            localStorage.setItem("Color3", '');
-            localStorage.setItem("Color4", '');
-            localStorage.setItem("Color5", '');
-        }
-        window.addEventListener('load', event => {
-            reset();
-        });
         
-        
-    </script>
 </body>
 </html>

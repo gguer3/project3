@@ -1,9 +1,8 @@
 console.log(navigator);
 
-/*function setGradient(c1, c2, c3, c4, c5) {
-    $('body').style.background = "linear-gradient(to right, " + c1 + ", " + c2 + ", " + c3 + ", " + c4 + ", " + c5 + ")";
-    css.textContent = $('body').style.background + ";";
-} */
+//define all the variables 
+var css = document.querySelector("h4");
+var body = document.getElementById("gradient");
 
 function getValue(cc) {
     const settings = {
@@ -13,7 +12,7 @@ function getValue(cc) {
         method: "GET",
         headers: {
             "X-RapidAPI-Host": "shazam-core.p.rapidapi.com",
-            "X-RapidAPI-Key": "2b9fa24191msh57704c74e98ca14p11e7b5jsn1ec9e00fc125"
+            "X-RapidAPI-Key": "bf95b811c4msh17c8f8abcc4732fp15480ajsnc2d5a0b106eb"
         }
     };
 
@@ -21,20 +20,16 @@ function getValue(cc) {
         console.log(response);
         clrlist = response[0].images.joecolor
         color1 = "#" + clrlist.substr(2,6)
-        //localStorage.setItem("Color1", color1);
         color2 = "#" + clrlist.substr(10,6)
-        //localStorage.setItem("Color2", color2);
         color3 = "#" + clrlist.substr(18,6)
-        //localStorage.setItem("Color3", color3);
         color4 = "#" + clrlist.substr(26,6)
-        //localStorage.setItem("Color4", color4);
         color5 = "#" + clrlist.substr(34,6)
-        //localStorage.setItem("Color5", color5);
-        //setGradient(color1, color2, color3, color4, color5)
         song = response[0].title
         artist = response[0].subtitle
         document.getElementById("songlabel").innerHTML = song
         document.getElementById("artistlabel").innerHTML = artist
+        body.style.background = "linear-gradient(to right, " + color1 + ", " + color2 + ", " + color3 + ", " + color4 + ", " + color5 + ")";
+        css.textContent = body.style.background + ";";
     });
 }
 
@@ -144,8 +139,8 @@ function noteOn(note){
         getValue('IN')
     }
     if (note == 61){
-        document.getElementById("country").innerHTML = "This is South Africa"
-        getValue('ZA')
+        document.getElementById("country").innerHTML = "This is Turkey"
+        getValue('TR')
     }
     if (note == 60){
         document.getElementById("country").innerHTML = "This is Italy"
@@ -294,10 +289,6 @@ function noteOn(note){
     if (note == 72){
         document.getElementById("country").innerHTML = "This is Poland"
         getValue('PL')
-    }
-    if (note == 43){
-        document.getElementById("country").innerHTML = "This is Turkey"
-        getValue('TR')
     }
     
 }
