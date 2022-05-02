@@ -5,29 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="apps.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
 </head>
+<style>
+body {
+    font: 'Raleway', sans-serif;
+    color: rgba(0,0,0);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    top: 15%;
+    background: linear-gradient(to right, green , teal);
+}
+.center {
+    margin: auto;
+    width: 60%;
+    border: 5px solid #000000;
+    position: fixed;
+    display: block;
+    top: 40%;
+    left: 50%;
+    width:50%;
+    text-align:center;
+    margin-top: -50px;
+    margin-left: -350px;
+    }
+</style>
 <body>
-    <h1 id="testelm">Launch Pad Demo</h1>
+    <div class=center>
+        <h1 id="country">Welcome</h1>
+        <h3>Song:   </h3><h3 id="songlabel"></h3>
+        <h3>Artist:   </h3><h3 id="artistlabel"></h3>
+    </div>
+
+    <script src="apps.js"></script>
 
     <script>
-        const settings = {
-	        "async": true,
-	        "crossDomain": true,
-	        "url": "https://shazam-core.p.rapidapi.com/v1/charts/country?country_code=DE&limit=10",
-	        "method": "GET",
-	        "headers": {
-		        "X-RapidAPI-Host": "shazam-core.p.rapidapi.com",
-		        "X-RapidAPI-Key": "2b9fa24191msh57704c74e98ca14p11e7b5jsn1ec9e00fc125"
-	        }
-        };
-
-        $.ajax(settings).done(function (response) {
-	        console.log(response);
-            tester = response[3].images.joecolor
-            console.log(tester.substr(2,6))
+        function reset() {
+            localStorage.setItem("Color1", '');
+            localStorage.setItem("Color2", '');
+            localStorage.setItem("Color3", '');
+            localStorage.setItem("Color4", '');
+            localStorage.setItem("Color5", '');
+        }
+        window.addEventListener('load', event => {
+            reset();
         });
+        
+        
     </script>
 </body>
 </html>
